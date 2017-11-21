@@ -75,7 +75,4 @@ module T = {
     | Nothing;
 };
 
-module type t = {
-  include (module type of T);
-  let keycodeMap: int => keycodeT;
-};
+module type t = {include module type of T; let keycodeMap: int => keycodeT;};
