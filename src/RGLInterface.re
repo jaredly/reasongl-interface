@@ -42,6 +42,7 @@ module type t = {
       ~keyDown: (~keycode: Events.keycodeT, ~repeat: bool) => unit=?,
       ~keyUp: (~keycode: Events.keycodeT) => unit=?,
       ~windowResize: unit => unit=?,
+      ~backPressed: unit => bool=?,
       ~displayFunc: float => unit,
       unit
     ) =>
