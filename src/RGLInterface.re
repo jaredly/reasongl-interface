@@ -6,9 +6,9 @@ module type t = {
   let target: string;
   type contextT;
   module type FileT = {type t;
-    let readFile: (~filename: string, ~cb: string => unit) => unit;
-    let saveUserData: (~key: string, ~value: 'a) => bool;
-    let loadUserData: (~key: string) => option('a);
+    let readFile: (~context: contextT, ~filename: string, ~cb: string => unit) => unit;
+    let saveUserData: (~context: contextT, ~key: string, ~value: 'a) => bool;
+    let loadUserData: (~context: contextT, ~key: string) => option('a);
   };
   module File: FileT;
   module type WindowT = {
@@ -145,7 +145,7 @@ module type t = {
     | LoadRGB
     | LoadRGBA;
   let loadImage:
-    (~filename: string, ~loadOption: loadOptionT=?, ~callback: option(imageT) => unit, unit) =>
+    (~context: contextT, ~filename: string, ~loadOption: loadOptionT=?, ~callback: option(imageT) => unit, unit) =>
     unit;
   let texImage2DWithImage: (~context: contextT, ~target: int, ~level: int, ~image: imageT) => unit;
   let uniform1i: (~context: contextT, ~location: uniformT, ~value: int) => unit;
