@@ -149,6 +149,7 @@ module type t = {
     (~context: contextT, ~filename: string, ~loadOption: loadOptionT=?, ~callback: option(imageT) => unit, unit) =>
     unit;
   let texImage2DWithImage: (~context: contextT, ~target: int, ~level: int, ~image: imageT) => unit;
+  let fillTextureWithColor: (~context: contextT, ~target: int, ~level: int, ~red: int, ~green: int, ~blue: int, ~alpha: int) => unit;
   let uniform1i: (~context: contextT, ~location: uniformT, ~value: int) => unit;
   let uniform1f: (~context: contextT, ~location: uniformT, ~value: float) => unit;
   let uniform2f: (~context: contextT, ~location: uniformT, ~v1: float, ~v2: float) => unit;
