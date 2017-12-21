@@ -15,6 +15,8 @@ module type t = {
     type t;
     let getWidth: t => int;
     let getHeight: t => int;
+    let getMaxWidth: t => int;
+    let getMaxHeight: t => int;
     let getPixelWidth: t => int;
     let getPixelHeight: t => int;
     let getPixelScale: t => float;
