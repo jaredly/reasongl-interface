@@ -5,13 +5,14 @@
 module type t = {
   let target: string;
   type contextT;
-  module type FileT = {type t;
+
+  module File: {
+    type t;
     let readFile: (~context: contextT, ~filename: string, ~cb: string => unit) => unit;
     let saveUserData: (~context: contextT, ~key: string, ~value: 'a) => bool;
     let loadUserData: (~context: contextT, ~key: string) => option('a);
   };
-  module File: FileT;
-  module type WindowT = {
+  module Window: {
     type t;
     let getWidth: t => int;
     let getHeight: t => int;
@@ -24,13 +25,12 @@ module type t = {
     let setWindowSize: (~window: t, ~width: int, ~height: int) => unit;
     let getContext: t => contextT;
   };
-  module Window: WindowT;
-  module type AudioT = {
+
+  module Audio: {
     type t;
     let loadSound: (Window.t, string, t => unit) => unit;
     let playSound: (Window.t, t, ~volume: float, ~loop: bool) => unit;
   };
-  module Audio: AudioT;
   module Events: RGLEvents.t;
 
   let getTimeMs: unit => float;
