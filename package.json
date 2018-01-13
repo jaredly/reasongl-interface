@@ -1,14 +1,14 @@
 {
-  "name": "ReasonglInterface",
-  "version": "0.1.14",
+  "name": "@jaredly/reasongl-interface",
+  "version": "1.0.1",
   "description": "Reason interface to GL.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bsansouci/reasongl-interface.git"
+    "url": "git+https://github.com/jaredly/reasongl-interface.git"
   },
   "rebel": { },
-  "author": "bsansouci & schmavery",
+  "author": "bsansouci & schmavery & jaredly",
   "devDependencies": {
-    "bs-platform": "bsansouci/bsb-native"
+    "bs-platform": "bsansouci/bsb-native#fast"
   }
 }

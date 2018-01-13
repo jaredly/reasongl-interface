@@ -1,5 +1,5 @@
 {
-  "name": "ReasonglInterface",
+  "name": "@jaredly/reasongl-interface",
   "sources": "src",
   "allowed-build-kinds": ["js", "bytecode", "native"],
   "refmt": 3,
